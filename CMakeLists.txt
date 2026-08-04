@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.28)
+project(Bounce CXX)
+
+include(FetchContent)
+FetchContent_Declare(sfml GIT_REPOSITORY https://github.com/SFML/SFML.git GIT_TAG 3.0.2)
+FetchContent_MakeAvailable(sfml)
+
+file(GLOB SOURCES CONFIGURE_DEPENDS Source/*.cpp)
+add_executable(Bounce ${SOURCES})
+
+target_include_directories(Bounce PRIVATE Include)
+target_compile_features(Bounce PRIVATE cxx_std_20)
+target_link_libraries(Bounce PRIVATE SFML::Graphics SFML::Audio)
