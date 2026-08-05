@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.28)
 project(Bounce CXX)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(FetchContent)
 FetchContent_Declare(sfml GIT_REPOSITORY https://github.com/SFML/SFML.git GIT_TAG 3.0.2)
 FetchContent_MakeAvailable(sfml)
