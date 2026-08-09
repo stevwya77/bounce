@@ -5,6 +5,7 @@
 class Paddle
 {
 private:
+    static sf::Texture& GetTexture();
     sf::RectangleShape shape_;
     float speed_;
 

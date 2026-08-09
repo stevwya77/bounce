@@ -4,11 +4,17 @@
 #include <algorithm>
 #include "GameConfig.h"
 
+sf::Texture& Paddle::GetTexture()
+{
+    static sf::Texture texture("Content/paddle.png");
+    return texture;
+}
+
 Paddle::Paddle() :
     shape_(gConfig.paddleSize),
     speed_(gConfig.paddleSpeed)
 {
-    shape_.setFillColor(sf::Color::Green);
+    shape_.setTexture(&GetTexture());
     shape_.setOrigin(shape_.getGeometricCenter());
     shape_.setPosition({gConfig.windowSize.x * 0.50f, gConfig.windowSize.y * 0.85f});
 }

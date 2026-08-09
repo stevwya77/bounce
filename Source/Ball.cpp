@@ -1,13 +1,23 @@
 #include "Ball.h"
 #include "Random.h"
+#include "SFML/Graphics/Color.hpp"
 #include "SFML/System/Angle.hpp"
 #include "GameConfig.h"
+
+sf::Texture& Ball::GetTexture()
+{
+    static sf::Texture texture("Content/Ball.png");
+    return texture;
+}
 
 Ball::Ball() :
     shape_(gConfig.ballRadius),
     speed_(gConfig.ballSpeed)
 {
-    shape_.setFillColor(sf::Color::Cyan);
+    shape_.setTexture(&GetTexture());
+    shape_.setFillColor({188, 233, 84, 250});
+    //shape_.setOutlineColor({244, 245, 255 , 100});
+    //shape_.setOutlineThickness(3);
     shape_.setOrigin(shape_.getGeometricCenter());
     shape_.setPosition({gConfig.windowSize.x * 0.50f, gConfig.windowSize.y * 0.25f});
 

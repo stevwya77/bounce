@@ -1,15 +1,15 @@
 #include "GameConfig.h"
 
 GameConfig::GameConfig() :
-    windowSize(900, 500),
-    paddleSize(120, 20),
+    windowSize(1920, 1080),
+    paddleSize(250, 30),
     paddleSpeed(750),
-    ballSpeed(250),
-    ballRadius(10),
+    ballSpeed(200),
+    ballRadius(15),
     ballSpawnCooldown(2),
     musicVolume(20),
     bounceSoundVolume(10),
-    startingLives(10)
+    startingLives(5)
 {
 
 }
